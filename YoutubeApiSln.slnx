@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/Core/">
+    <Project Path="Core/YoutubeApi.Application/YoutubeApi.Application.csproj" />
+    <Project Path="Core/YoutubeApi.Domain/YoutubeApi.Domain.csproj" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="Infrastructure/YoutubeApi.Infrastructure/YoutubeApi.Infrastructure.csproj" />
+    <Project Path="Infrastructure/YoutubeApi.Persistence/YoutubeApi.Persistence.csproj" />
+  </Folder>
+  <Folder Name="/Presentation/">
+    <Project Path="Presentation/YoutubeApi.Api/YoutubeApi.Api.csproj" />
+  </Folder>
+</Solution>
