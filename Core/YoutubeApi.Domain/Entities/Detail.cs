@@ -14,13 +14,13 @@ namespace YoutubeApi.Domain.Entities
             
         }
 
-        public Detail(int title, string description, int categoryId)
+        public Detail(string title, string description, int categoryId)
         {
             Title = title;
             Description = description;
             CategoryId = categoryId;
         }
-        public required int Title { get; set; }
+        public required string Title { get; set; }
 
         public required string Description { get; set; }
 
