@@ -7,14 +7,17 @@ using Bogus;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using YoutubeApi.Domain.Entities;
+
 namespace YoutubeApi.Persistence.Configurations
 {
-    public class ProductConfiguration : IEntityTypeConfiguration<Brand>
+    // Sınıfımız Product ayarlarını yapıyor
+    public class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
-        public void Configure(EntityTypeBuilder<Brand> builder)
+        public void Configure(EntityTypeBuilder<Product> builder)
         {
             Faker faker = new("tr");
 
+            // BURASI ÇOK ÖNEMLİ: Nesnelerin tipi 'Product' olmalı, 'Brand' değil!
             Product product1 = new()
             {
                 Id = 1,
@@ -25,7 +28,6 @@ namespace YoutubeApi.Persistence.Configurations
                 Price = faker.Finance.Amount(10, 1000),
                 CreatedDate = DateTime.Now,
                 IsDeleted = false,
-
             };
 
             Product product2 = new()
@@ -33,12 +35,11 @@ namespace YoutubeApi.Persistence.Configurations
                 Id = 2,
                 Title = faker.Commerce.ProductName(),
                 Description = faker.Commerce.ProductDescription(),
-                BrandId = 3,
+                BrandId = 2, // Aktif olan BrandId
                 Discount = faker.Random.Decimal(0, 10),
                 Price = faker.Finance.Amount(10, 1000),
                 CreatedDate = DateTime.Now,
                 IsDeleted = false,
-
             };
 
             builder.HasData(product1, product2);
