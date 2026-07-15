@@ -20,6 +20,7 @@ namespace YoutubeApi.Persistence
             opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))); //veritabanını bağladık.
 
             services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>)); // IReadRepository'yi ReadRepository ile ilişkilendirdik.
+            services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));//IWriteRepository'yi WriteRepository ile ilişkilendirdik.
         }
 
     }
