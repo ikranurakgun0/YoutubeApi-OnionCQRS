@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YoutubeApi.Application.Interfaces.Repositories;
+using YoutubeApi.Application.Interfaces.UnitOfWorks;
 using YoutubeApi.Persistence.Context;
 using YoutubeApi.Persistence.Repositories;
+using YoutubeApi.Persistence.UnitOfWorks;
 
 namespace YoutubeApi.Persistence
 {
@@ -21,6 +23,7 @@ namespace YoutubeApi.Persistence
 
             services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>)); // IReadRepository'yi ReadRepository ile ilişkilendirdik.
             services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));//IWriteRepository'yi WriteRepository ile ilişkilendirdik.
+            services.AddScoped<IUnitOfWork, UnitOfWork>(); //IUnitOfWork'yi UnitOfWork ile ilişkilendirdik.
         }
 
     }
